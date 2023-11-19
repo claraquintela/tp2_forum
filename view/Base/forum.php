@@ -9,8 +9,17 @@ $result =  mysqli_query($connex, $sql);
 <div class="data-article">
     <h2>Hello <?= $_SESSION['nom']; ?></h2>
     <div class="article">
-        <div>
 
-        </div>
+        <?php
+        foreach ($result as $row) {
+
+        ?>
+            <div><?= $row['titre']; ?></div>
+            <div><?= $row['utilisateur.nom']; ?></div>
+            <div><?= $row['date']; ?></div>
+            <div><?= $row['article']; ?></div>
+        <?php
+        }
+        ?>
     </div>
 </div>
