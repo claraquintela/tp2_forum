@@ -15,7 +15,7 @@ if (isset($_GET['msg'])) {
 
     <h1>The Knitting Forum</h1>
 
-    <form action="/lib/auth.php" method="post">
+    <form action="index.php?controller=utilisateur&function=authentication" method="post">
         <h3>Login</h3>
         <span class="text-danger"><?= $msg; ?></span>
         <div class="champ"><label> Username :
@@ -24,13 +24,11 @@ if (isset($_GET['msg'])) {
         </div>
         <div class="champ">
             <label> Mot de passe :
-                <input name="password" type="password">
+                <input name="motdepasse" type="password">
             </label>
         </div>
         <div class="champ">
             <input type="submit" value="Login" class="btn">
         </div>
     </form>
-</div>
-
 </div>

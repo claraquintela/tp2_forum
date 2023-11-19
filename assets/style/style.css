@@ -23,6 +23,8 @@ main {
     display: flex;
     justify-content: center;
     background-image: url('TP_forum.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
     
 }
 
@@ -108,4 +110,11 @@ main {
 
 .btn:disabled {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+
+.data-article {
+    height: 900px;
+    margin-top: 200px;
+    margin-left: 800px;
 }

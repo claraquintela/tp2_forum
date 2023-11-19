@@ -9,7 +9,7 @@ $controller_file = "controllers/" . ucfirst($controller) . "Controller.php";
 
 if (!file_exists($controller_file)) {
     trigger_error('Invalid controller');
-    echo '<br>invalid controller';
+    echo '<br>invalid controller1';
     exit;
 }
 
@@ -20,7 +20,7 @@ $controller_function = strtolower($function);
 
 if (!function_exists($controller_function)) {
     trigger_error('Invalid controller');
-    echo '<br>invalid controller';
+    echo '<br>invalid controller2';
     exit;
 }
 
