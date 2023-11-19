@@ -13,15 +13,24 @@ function create()
 function newUtilisateur()
 {
     require_once("db/connex.php");
-    error_log("NU1");
+
     foreach ($_POST as $key => $value) {
         $$key = mysqli_real_escape_string($connex, $value);
     }
-    error_log("NU2" . $$key);
 
-    $sql = "INSERT INTO utilisateur (nom, email, motdepasse, naissance) VALUES ('$nom', '$email', '$motdepasse', '$naissance')";
+    $salt = ")><U%EF65";
 
-    error_log("NU3" . $sql);
+    $saltPassword = $password . $salt;
+
+    error_log("senha1:" . $saltPassword);
+
+    $password = password_hash($saltPassword, PASSWORD_BCRYPT, ['cost' => 10]);
+
+    error_log("senha2:" . $password);
+
+    $sql = "INSERT INTO utilisateur (nom, email, motdepasse, naissance) VALUES ('$nom', '$email', '$password', '$naissance')";
+
+
 
     if (mysqli_query($connex, $sql)) {
 

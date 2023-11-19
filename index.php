@@ -24,6 +24,4 @@ if (!function_exists($controller_function)) {
     exit;
 }
 
-error_log("index" . $controller_file);
-error_log("index" . $function);
 call_user_func($function, $_REQUEST);
