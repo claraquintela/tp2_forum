@@ -22,7 +22,9 @@
     <main>
 
         <div class="container">
-            <?php echo $content; ?>
+            <?php
+            error_log("content 1");
+            echo $content; ?>
         </div>
 
     </main>
