@@ -28,7 +28,7 @@ if (isset($_GET['msg'])) {
             </label>
         </div>
         <div class="champ">
-            <input type="submit" value="Login">
+            <input type="submit" value="Login" class="btn">
         </div>
     </form>
 </div>
