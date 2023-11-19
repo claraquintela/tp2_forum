@@ -1,34 +1,26 @@
 <?php
 
 require_once('config/config.php');
+require_once('lib/core.php');
 
 $controller = isset($_REQUEST['controller']) ? safe($_REQUEST['controller']) : $config['default_controller'];
 
 $function = isset($_REQUEST['function']) ? safe($_REQUEST['function']) : $config['default_function'];
 
-?>
+$controller_file = "controllers/" . ucfirst($controller) . "Controller.php";
 
-<!DOCTYPE html>
-<html lang="en">
+if (!file_exists($controller_file)) {
+    trigger_error('Invalid controller');
+    echo '<br>invalid controller';
+    exit;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style/style.css">
-    <title>Forum</title>
-</head>
+require_once($controller_file);
+$controller_function = strtolower($function);
+if (!function_exists($controller_function)) {
+    trigger_error('Invalid controller');
+    echo '<br>invalid controller';
+    exit;
+}
 
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="index.php?controller=client">Client</a></li>
-                <li><a href="index.php?controller=client&function=create">Ajouter article</a></li>
-            </ul>
-        </nav>
-    </header>
-
-</body>
-
-</html>
+call_user_func($function, $_REQUEST);
