@@ -2,5 +2,5 @@
 
 function index($request)
 {
-    render('/base/login.php');
+    render('/base/welcome_login.php');
 }
