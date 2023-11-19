@@ -1,16 +1,35 @@
-<form action="">
-    <label> Nom :
-        <input name="nom" type="text">
-    </label>
-    <label> Courriel :
-        <input name="courriel" type="email">
-    </label>
-    <label> Naissance :
-        <input name="date_naissance" type="date">
-    </label>
-    <label> Mot de passe:
-        <input name="motdepasse" type="text">
-    </label>
+<div class="data-main">
+    <h2>Créer votre compte</h2>
 
-    <input type="submit" value="Save">
-</form>
+
+    <form action="index.php?controller=utilisateur&function=newUtilisateur" method="post">
+        <div class="champ">
+            <label> Nom :
+                <input name="nom" type="text">
+            </label>
+        </div>
+
+        <div class="champ">
+            <label> Courriel :
+                <input name="email" type="email">
+            </label>
+        </div>
+
+        <div class="champ">
+            <label> Mot de passe:
+                <input name="motdepasse" type="password">
+            </label>
+        </div>
+
+        <div class="champ">
+            <label> Naissance :
+                <input name="naissance" type="date">
+            </label>
+        </div>
+
+        <div class="champ">
+            <input type="submit" value="Save" class="btn">
+        </div>
+
+    </form>
+</div>

@@ -7,5 +7,35 @@ body{
 
 ul{
     background-color: #cbac93;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
 }
 
+li{
+    display: inline; 
+    margin-right: 20px;
+    font-weight: 800;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    background-image: url('TP_forum.jpg');
+    
+}
+
+.data-main {
+    display: flex;
+    flex-direction: column;
+    background-color: #cbb7a6;
+    margin-bottom: 350px;
+    margin-top: 300px;
+    padding:20px;
+    max-width: 500px;
+}
+
+.champ {
+    padding:5px;
+}

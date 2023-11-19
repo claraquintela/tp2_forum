@@ -14,13 +14,9 @@ if (!file_exists($controller_file)) {
 }
 
 
-
 require_once($controller_file);
 
-
 $controller_function = strtolower($function);
-
-echo $controller_function;
 
 if (!function_exists($controller_function)) {
     trigger_error('Invalid controller');
@@ -28,4 +24,6 @@ if (!function_exists($controller_function)) {
     exit;
 }
 
+error_log("index" . $controller_file);
+error_log("index" . $function);
 call_user_func($function, $_REQUEST);

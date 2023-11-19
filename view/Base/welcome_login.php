@@ -11,18 +11,26 @@ if (isset($_GET['msg'])) {
 
 ?>
 
-<div class="welcome">
+<div class="data-main">
+
+    <h1>The Knitting Forum</h1>
 
     <form action="/lib/auth.php" method="post">
         <h3>Login</h3>
         <span class="text-danger"><?= $msg; ?></span>
-        <label> Username :
-            <input name="username" type="email">
-        </label>
-        <label> Mot de passe :
-            <input name="password" type="password">
-        </label>
-        <input type="submit" value="Save">
+        <div class="champ"><label> Username :
+                <input name="username" type="email">
+            </label>
+        </div>
+        <div class="champ">
+            <label> Mot de passe :
+                <input name="password" type="password">
+            </label>
+        </div>
+        <div class="champ">
+            <input type="submit" value="Login">
+        </div>
     </form>
+</div>
 
 </div>
