@@ -21,9 +21,8 @@ function newUtilisateur()
     $salt = ")><U%EF65";
 
     $saltMotdepasse = $motdepasse . $salt;
-    error_log("chegando a variavel : " . $saltMotdepasse);
 
-    // $motdepasse = password_hash($saltMotdepasse, PASSWORD_BCRYPT, ['cost' => 10]);
+    $motdepasse = password_hash($saltMotdepasse, PASSWORD_BCRYPT, ['cost' => 10]);
 
     $sql = "INSERT INTO utilisateur (nom, email, motdepasse, naissance) VALUES ('$nom', '$email', '$motdepasse', '$naissance')";
 
@@ -54,17 +53,10 @@ function authentication()
         $info_user = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $info_user['motdepasse'];
         $salt = ")><U%EF65";
-        $x = $motdepasse . $salt;
+        $saltMotdepasse = $motdepasse . $salt;
+        $authenticated = password_verify($saltMotdepasse, $info_user['motdepasse']);
 
-        error_log("salt" . $x);
-        error_log("mot de passe" . $motdepasse);
-        // $motdepasse = password_hash($x, PASSWORD_BCRYPT, ['cost' => 10]);
-
-
-        error_log("password" . $motdepasse);
-        error_log("info_user" . $info_user['motdepasse']);
-
-        if ($motdepasse == $info_user['motdepasse']) {
+        if ($authenticated) {
 
             session_regenerate_id();
             $_SESSION['id'] = $info_user['id'];
@@ -73,9 +65,9 @@ function authentication()
 
             header('location:index.php?controller=forum&function=index');
         } else {
-            header('location:login.php?msg=2');
+            header("location:index.php?msg=2");
         }
     } else {
-        header('location:login.php?msg=1');
+        header("location:index.php?msg=1");
     }
 }

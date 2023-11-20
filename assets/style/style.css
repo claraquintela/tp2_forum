@@ -114,7 +114,38 @@ main {
 
 
 .data-article {
-    height: 900px;
-    margin-top: 200px;
-    margin-left: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 700px;
+    width: 600px;
+    margin:100px;
+    padding: 20px;;
+    margin-left: 900px;
+    border: #3c4043 dotted 2px;
+    background-color: rgba(203, 172, 147, 0.79);
+}
+
+.champ-article {
+    display: flex;
+    justify-content: left;
+    max-width: 600px;
+    margin: 10px;
+    
+}
+
+.input-area{
+    width: 400px;
+    margin-left: 15px;
+    
+}
+.textarea{
+    resize: none;
+    width: 400px;
+    height: 400px;
+}
+
+.areadate{
+    margin-left: 15px;
+
 }

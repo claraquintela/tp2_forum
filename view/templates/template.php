@@ -14,7 +14,7 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="index.php?controller=forum">Forum</a></li>
-                <li><a href="index.php?controller=article&function=create">Ajouter article</a></li>
+                <li><a href="index.php?controller=article&function=index">Ajouter article</a></li>
                 <li><a href="index.php?controller=utilisateur&function=create">Faire une compte</a></li>
             </ul>
         </nav>
