@@ -1,9 +1,6 @@
 <?php
 require('lib/checkSession.php');
 require('db/connex.php');
-$sql  = "SELECT * FROM article
-INNER JOIN utilisateur on utilisateur.id = article.utilisateur_id ORDER BY date; ";
-$result =  mysqli_query($connex, $sql);
 
 ?>
 
@@ -28,8 +25,16 @@ $result =  mysqli_query($connex, $sql);
                 <input name="date" type="date" class="areadate">
             </label>
         </div>
+
+        <div class="champ-article">
+
+            <input name="utilisateur_id" type="hidden" value="<?= $_SESSION['id']; ?>">
+
+
+
+        </div>
         <div class="champ">
-            <input type="submit" value="Save" class="btn ">
+            <input type="submit" value="Save" class="btn">
         </div>
     </form>
 </div>
