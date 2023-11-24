@@ -22,14 +22,14 @@ require('db/connex.php');
         </div>
         <div class="champ-article">
             <label> Date :
-                <input name="date" type="date" class="areadate">
+                <input name="date" type="date" class="areadate" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}
+">
             </label>
         </div>
 
         <div class="champ-article">
 
             <input name="utilisateur_id" type="hidden" value="<?= $_SESSION['id']; ?>">
-
 
 
         </div>

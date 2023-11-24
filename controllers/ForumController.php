@@ -2,5 +2,5 @@
 
 function index()
 {
-    render("/base/forum.php");
+    render("/forum/forum.php");
 }

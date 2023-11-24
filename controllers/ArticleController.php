@@ -2,7 +2,7 @@
 
 function index()
 {
-    render("/base/creer_article.php");
+    render("/forum/creer_article.php");
 }
 
 function newArticle()

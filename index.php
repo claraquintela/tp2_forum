@@ -13,13 +13,13 @@ if (!file_exists($controller_file)) {
     exit;
 }
 
-
+//note to self: pour recevoir le contenu du fichier controller demandé, on fait un require
 require_once($controller_file);
 
 $controller_function = strtolower($function);
 
 if (!function_exists($controller_function)) {
-    trigger_error('Invalid controller');
+    trigger_error('Invalid function');
     echo '<br>invalid controller2';
     exit;
 }

@@ -5,7 +5,7 @@
     <form action="index.php?controller=utilisateur&function=newUtilisateur" method="post">
         <div class="champ">
             <label> Nom :
-                <input name="nom" type="text">
+                <input name="nom" type="text" maxlength="25">
             </label>
         </div>
 
@@ -17,13 +17,13 @@
 
         <div class="champ">
             <label> Mot de passe:
-                <input name="motdepasse" type="password">
+                <input name="motdepasse" type="password" minlength="6" maxlength="20">
             </label>
         </div>
 
         <div class="champ">
             <label> Naissance :
-                <input name="naissance" type="date">
+                <input name="naissance" type="date" pattern="\d{1,2}/\d{1,2}/\d{4}">
             </label>
         </div>
 

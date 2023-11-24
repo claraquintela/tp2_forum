@@ -7,7 +7,7 @@ function index()
 
 function create()
 {
-    render("/base/creer_utilisateur.php");
+    render("/utilisateur/creer_utilisateur.php");
 }
 
 function newUtilisateur()
