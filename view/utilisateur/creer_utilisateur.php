@@ -23,7 +23,7 @@
 
         <div class="champ">
             <label> Naissance :
-                <input name="naissance" type="date" pattern="\d{1,2}/\d{1,2}/\d{4}">
+                <input name="naissance" type="date">
             </label>
         </div>
 

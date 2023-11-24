@@ -2,7 +2,7 @@
 require('lib/checkSession.php');
 require('db/connex.php');
 $sql  = "SELECT * FROM article
-INNER JOIN utilisateur on utilisateur.id = article.utilisateur_id ORDER BY date asc LIMIT 5; ";
+INNER JOIN utilisateur on utilisateur.id = article.utilisateur_id ORDER BY date desc LIMIT 5; ";
 $result =  mysqli_query($connex, $sql);
 
 ?>
