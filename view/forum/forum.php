@@ -1,7 +1,7 @@
 <?php
 require('lib/checkSession.php');
 require('db/connex.php');
-$sql  = "SELECT * FROM article
+$sql  = "SELECT article.id, article.titre, article.date, article.article, article.utilisateur_id, utilisateur.nom FROM article
 INNER JOIN utilisateur on utilisateur.id = article.utilisateur_id ORDER BY date desc LIMIT 5; ";
 $result =  mysqli_query($connex, $sql);
 
@@ -36,8 +36,8 @@ if ($_SESSION) {
                 <div class="forum-nom"><?= $row['nom']; ?></div>
 
                 <div class="boutons-article">
-                    <a href=""><button type="submit" class="boutonarticle">Editer</button></a>
-                    <a href=""><button type="submit" class="boutonarticle">Éffacé</button></a>
+                    <a href="index.php?controller=article&function=formedit&id=<?= $row['id'] ?>"><button type="submit" class="btn">Editer</button></a>
+                    <a href="index.php?controller=article&function=deletearticle&id=<?= $row['id'] ?>"><button type="submit" class="btn">Éffacé</button></a>
                 </div>
             </div>
         <?php

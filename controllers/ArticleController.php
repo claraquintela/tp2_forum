@@ -12,13 +12,20 @@ function newArticle()
     render("/forum/forum.php");
 }
 
-// function editer(){
+function formedit($request)
+{
+    require_once("models/article.php");
+    $result = ouvrirFormEditer($request);
 
-//     require_once("lib/checkSession.php");
+    render('/forum/editer-article.php', $result);
+}
 
-//     if(!$_SESSION) {
-//         echo "Vous devez faire votre login pour pouvoir modifier les articles écrits par vous même";
-//     } elseif ($_SESSION==true & id== .article)
-//     require_once("models/article.php");
-//     $edit = edit();
-// }
+function editer()
+{
+    require_once("models/article.php");
+    $result = updateArticle();
+
+    if ($result) {
+        render('location:index.php?controller=forum&function=index');
+    }
+}

@@ -1,3 +1,10 @@
+<?
+// Note to self: require necessaire pour envoyer les info de qui est loggedin
+require('lib/checkSession.php');
+require('db/connex.php');
+
+?>
+
 <div class="data-article">
 
     <h1>Écrire un article</h1>
