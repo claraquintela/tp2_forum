@@ -34,6 +34,11 @@ if ($_SESSION) {
                 <div class="forum-date"><?= $row['date']; ?></div>
                 <div class="forum-article"><?= $row['article']; ?></div>
                 <div class="forum-nom"><?= $row['nom']; ?></div>
+
+                <div class="boutons-article">
+                    <a href=""><button type="submit" class="boutonarticle">Editer</button></a>
+                    <a href=""><button type="submit" class="boutonarticle">Éffacé</button></a>
+                </div>
             </div>
         <?php
         }

@@ -133,8 +133,7 @@ main {
     display: flex;
     justify-content: left;
     max-width: 600px;
-    margin: 10px;
-    
+    margin: 10px;  
 }
 
 .input-area{
@@ -142,6 +141,7 @@ main {
     margin-left: 15px;
     
 }
+
 .textarea{
     resize: none;
     width: 400px;
@@ -153,14 +153,12 @@ main {
 
 }
 
-
-
 .forum-post{
  border: 1px solid black;
  background-color: #e7ddd5;
  margin: 15px;
  padding: 15px;
- max-width: 500px;
+ width: 500px;
 
 }
 
@@ -180,4 +178,10 @@ main {
 
 .forum-nom {
   font-style: italic;
+}
+
+.boutonarticle{
+  border: #3c4043 solid 1px;
+    background-color: rgba(210, 190, 174, 0.79);
+    border-radius: 15px;
 }

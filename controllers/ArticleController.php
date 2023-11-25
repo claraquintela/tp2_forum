@@ -12,7 +12,7 @@ function newArticle()
     render("/forum/forum.php");
 }
 
-// function editArticle(){
+// function editer(){
 
 //     require_once("lib/checkSession.php");
 
