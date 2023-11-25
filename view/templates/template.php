@@ -11,11 +11,18 @@
 <body>
     <header>
         <nav>
-            <ul>
+            <ul class="menu1">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="index.php?controller=forum">Forum</a></li>
                 <li><a href="index.php?controller=article&function=index">Ajouter article</a></li>
                 <li><a href="index.php?controller=utilisateur&function=create">Faire une compte</a></li>
+            </ul>
+
+            <ul class="menu2">
+                <li><a href="index.php?controller=utilisateur&function=index">Login</a>
+                <li>/</li>
+                </li>
+                <li><a href="">Logout</a></li>
             </ul>
         </nav>
     </header>

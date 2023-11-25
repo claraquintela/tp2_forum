@@ -3,7 +3,6 @@
 function createArticle()
 {
     require_once("db/connex.php");
-    var_dump($_POST);
 
     foreach ($_POST as $key => $value) {
         $$key = mysqli_real_escape_string($connex, $value);
@@ -18,4 +17,9 @@ function createArticle()
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($connex);
     }
+}
+
+function edit()
+{
+    require_once("db/connex.php");
 }
