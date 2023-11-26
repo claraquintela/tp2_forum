@@ -35,13 +35,38 @@ if ($_SESSION) {
                 <div class="forum-article"><?= $row['article']; ?></div>
                 <div class="forum-nom"><?= $row['nom']; ?></div>
 
-                <div class="boutons-article">
-                    <a href="index.php?controller=article&function=formedit&id=<?= $row['id'] ?>"><button type="submit" class="btn">Editer</button></a>
-                    <a href="index.php?controller=article&function=deletearticle&id=<?= $row['id'] ?>"><button type="submit" class="btn">Éffacé</button></a>
-                </div>
+                <?php
+
+                if ($_SESSION) {
+
+                    if ($_SESSION['id'] == $row['utilisateur_id']) {
+                ?>
+                        <div class="boutons-article">
+                            <a href="index.php?controller=article&function=formedit&id=<?= $row['id']; ?>"><button type="submit" class="btn">Editer</button></a>
+                            <a href="index.php?controller=article&function=deletearticle&id=<?= $row['id']; ?>"><button type="submit" class="btn">Éffacé</button></a>
+                        </div>
             </div>
         <?php
-    }
-
+                    } else {
         ?>
+            <div class="boutons-article">
+                <label class="danger">Vous pouvez éditer/éffacer seulement les articles que vous avez écrit</label><br>
+                <button type="submit" class="btn" disabled>Editer</button>
+                <button type="submit" class="btn" disabled>Éffacé</button>
+            </div>
         </div>
+    <?php
+                    }
+                } else {
+    ?>
+    <div class="boutons-article">
+        <label class="danger">Faites le login pour pouvoir éditer/éffacer vos articles</label><Br>
+        <button type="submit" class="btn" disabled>Editer</button>
+        <button type="submit" class="btn" disabled>Éffacé</button>
+    </div>
+    </div>
+<?php
+                }
+            }
+?>
+</div>

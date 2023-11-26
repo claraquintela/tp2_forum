@@ -17,6 +17,9 @@ li{
     font-weight: 800;
 }
 
+a   {
+  text-decoration: none;
+}
 nav{
   display: flex;
   justify-content: space-between;
@@ -27,7 +30,6 @@ main {
     display: flex;
     justify-content: center;
     background-image: url('TP_forum.jpg');
-    background-repeat: no-repeat;
     background-size: auto;
     
 }
@@ -55,7 +57,7 @@ main {
   border-style: none;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
   box-sizing: border-box;
-  color: #3c4043;
+  color:#3c4043;
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
@@ -93,6 +95,7 @@ main {
 
 .btn {
   outline: none;
+  margin: 10px;
   
 }
 
@@ -113,18 +116,25 @@ main {
 }
 
 .btn:disabled {
-  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+  background-color: #9ea1a2;
+  color: white;
+  box-shadow: rgba(172, 175, 178, 0.3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
+
+.danger{
+  color: red;
+  font-size: 0.6rem;
+  font-style: italic;
+}
 
 .data-article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600px;
+    width: 1000px;
     margin:100px;
     padding: 20px;;
-    margin-left: 900px;
     border: #3c4043 dotted 2px;
     background-color: rgba(203, 172, 147, 0.79);
 }
@@ -132,19 +142,19 @@ main {
 .champ-article {
     display: flex;
     justify-content: left;
-    max-width: 600px;
+    max-width: 800px;
     margin: 10px;  
 }
 
 .input-area{
-    width: 400px;
+    width: 700px;
     margin-left: 15px;
     
 }
 
 .textarea{
     resize: none;
-    width: 400px;
+    width: 800px;
     height: 400px;
 }
 
@@ -158,7 +168,7 @@ main {
  background-color: #e7ddd5;
  margin: 15px;
  padding: 15px;
- width: 500px;
+ width: 900px;
 
 }
 
