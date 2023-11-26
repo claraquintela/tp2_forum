@@ -1,3 +1,7 @@
+<?php
+require_once('lib/checkSession.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,14 +18,23 @@
             <ul class="menu1">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="index.php?controller=forum&function=index">Forum</a></li>
-                <li><a href="index.php?controller=article&function=index">Ajouter article</a></li>
-                <li><a href="index.php?controller=utilisateur&function=create">Faire une compte</a></li>
+
+                <?php
+                if ($_SESSION) {
+                ?>
+                    <li><a href="index.php?controller=article&function=index">Ajouter article</a></li>
+                <?php
+                }
+                ?>
+
             </ul>
 
             <ul class="menu2">
                 <li><a href="index.php?controller=utilisateur&function=index">Login</a></li>
                 <li>/</li>
                 <li><a href="index.php?controller=utilisateur&function=logout">Logout</a></li>
+                <li>/</li>
+                <li><a href="index.php?controller=utilisateur&function=create">Faire une compte</a></li>
             </ul>
         </nav>
     </header>
