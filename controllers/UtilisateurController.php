@@ -22,3 +22,12 @@ function authentication()
     require_once("models/utilisateur.php");
     return auth();
 }
+
+function logout()
+{
+    require('lib/checkSession.php');
+    session_start();
+    session_destroy();
+
+    render("/utilisateur/login.php");
+}

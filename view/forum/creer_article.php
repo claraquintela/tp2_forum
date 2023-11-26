@@ -1,13 +1,12 @@
-<?
+<?php
 // Note to self: require necessaire pour envoyer les info de qui est loggedin
-require('lib/checkSession.php');
-require('db/connex.php');
+require_once('lib/checkSession.php');
 
 ?>
 
 <div class="data-article">
 
-    <h1>Écrire un article</h1>
+    <h1>Écrire un article, <?= $_SESSION['nom']; ?></h1>
 
     <form action="index.php?controller=article&function=newArticle" method="post">
 
@@ -27,12 +26,8 @@ require('db/connex.php');
             </label>
         </div>
 
-        <div class="champ-article">
+        <input name="utilisateur_id" type="hidden" value="<?= $_SESSION['id']; ?>">
 
-            <input name="utilisateur_id" type="hidden" value="<?= $_SESSION['id']; ?>">
-
-
-        </div>
         <div class="champ">
             <input type="submit" value="Save" class="btn">
         </div>

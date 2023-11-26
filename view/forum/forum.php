@@ -18,15 +18,15 @@ if ($_SESSION) {
     <?php
 
 } else {
+
     ?>
         <div class="data-article">
             <h3>Voici les dernières posts</h3>
         <?php
     }
-        ?>
 
-        <?php
-        foreach ($result as $row) {
+    foreach ($result as $row) {
+
 
         ?>
             <div class="forum-post">
@@ -41,6 +41,7 @@ if ($_SESSION) {
                 </div>
             </div>
         <?php
-        }
+    }
+
         ?>
         </div>

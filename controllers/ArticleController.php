@@ -24,8 +24,12 @@ function editer()
 {
     require_once("models/article.php");
     $result = updateArticle();
+    render("/forum/forum.php");
+}
 
-    if ($result) {
-        render('location:index.php?controller=forum&function=index');
-    }
+function deletearticle($request)
+{
+    require_once("models/article.php");
+    $result = delete($request);
+    render("/forum/forum.php");
 }

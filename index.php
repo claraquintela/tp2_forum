@@ -20,7 +20,7 @@ $controller_function = strtolower($function);
 
 if (!function_exists($controller_function)) {
     trigger_error('Invalid function');
-    echo '<br>invalid controller2';
+    echo '<br>invalid function';
     exit;
 }
 

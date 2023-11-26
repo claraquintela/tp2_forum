@@ -2,11 +2,15 @@
 
 function createArticle()
 {
+
     require_once("db/connex.php");
 
     foreach ($_POST as $key => $value) {
         $$key = mysqli_real_escape_string($connex, $value);
+
+        error_log("key : " . $key . " value : " . $value);
     }
+
 
     $sql = "INSERT INTO article (titre, article, date, utilisateur_id) VALUES ('$titre', '$article', '$date', '$utilisateur_id')";
 
@@ -26,7 +30,7 @@ function ouvrirFormEditer($request)
 
     $id = mysqli_real_escape_string($connex, $request['id']);
 
-    $sql  = "SELECT article.id, article.titre, article.date, article.article, article.utilisateur_id, utilisateur.nom FROM article INNER JOIN utilisateur on utilisateur.id = article.utilisateur_id where article.id = " . $id . " ORDER BY date desc LIMIT 5; ";
+    $sql  = "SELECT article.id, article.titre, article.date, article.article, article.utilisateur_id, utilisateur.nom FROM article INNER JOIN utilisateur on utilisateur.id = article.utilisateur_id where article.id = " . $id . "; ";
     $result =  mysqli_query($connex, $sql);
 
     $count = mysqli_num_rows($result);
@@ -34,7 +38,7 @@ function ouvrirFormEditer($request)
     if ($count == 1) {
         $articleTrouve = mysqli_fetch_array($result, MYSQLI_ASSOC);
     } else {
-        // header('location: client-index.php');
+
         echo "Article pas trouvé";
     }
 
@@ -54,10 +58,29 @@ function updateArticle()
         $$key = mysqli_real_escape_string($connex, $value);
     }
 
-    error_log("Porque o id se recusa a chegar nessa xibonga? ", $id);
-
-
     $sql = "UPDATE article SET titre = '$titre', article = '$article' WHERE id = '$id' ";
+
+
+    if (mysqli_query($connex, $sql)) {
+        return true;
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($connex);
+    }
+}
+
+
+function delete($request)
+{
+    require_once("db/connex.php");
+
+    $id = mysqli_real_escape_string($connex, $request['id']);
+
+    foreach ($_POST as $key => $value) {
+        $$key = mysqli_real_escape_string($connex, $value);
+    }
+
+
+    $sql = "DELETE FROM article WHERE id = '$id' ";
 
 
     if (mysqli_query($connex, $sql)) {
