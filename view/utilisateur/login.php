@@ -17,7 +17,7 @@ if (isset($_GET['msg'])) {
 
     <form action="index.php?controller=utilisateur&function=authentication" method="post">
         <h3>Login</h3>
-        <span class="text-danger"><?= $msg; ?></span>
+        <span class="danger"><?= $msg; ?></span>
         <div class="champ"><label> Username :
                 <input name="username" type="email">
             </label>

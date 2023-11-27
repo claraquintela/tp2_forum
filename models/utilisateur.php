@@ -17,8 +17,6 @@ function nouveauUtilisateur()
     $sql = "INSERT INTO utilisateur (nom, email, motdepasse, naissance) VALUES ('$nom', '$email', '$motdepasse', '$naissance')";
 
     if (mysqli_query($connex, $sql)) {
-
-        header('location:index.php?controller=utilisateur&function=index');
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($connex);
     }
@@ -55,9 +53,9 @@ function auth()
 
             header('location:index.php?controller=forum&function=index');
         } else {
-            header("location:index.php?msg=2");
+            header("location:index.php?controller=utilisateur&function=index&msg=2");
         }
     } else {
-        header("location:index.php?msg=1");
+        header("location:index.php?controller=utilisateur&function=index&msg=1");
     }
 }

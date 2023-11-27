@@ -1,6 +1,6 @@
 <?php
 
-function index()
+function index($request = null)
 {
     render("/utilisateur/login.php");
 }
